@@ -1,21 +1,21 @@
 CREATE DATABASE EbBill;
 USE EbBill;
 
+SHOW TABLES ;
 
-CREATE TABLE Customer_info(
+SELECT * FROM Customer;
 
-id int(50) not null auto_increment,
+CREATE TABLE Customer(
+id int(255) not null auto_increment,
 firstname varchar(30) NOT NULL,
 lastname varchar(30)NOT NULL,
 address varchar(30)NOT NULL,
-UserID INT (10000) NOT NULL primary key,
+UserID INT (255) NOT NULL,
 password varchar(30)NOT NULL,
-type ENUM('H','C') NOT NULL
+type ENUM('H','C') NOT NULL,
+Primary key(id,UserID)
 );
-alter table customer_info ADD UNIQUE INDEX(UserId);
-
-SHOW TABLES ;
-
-SELECT * FROM Customer_info;
-INSERT IGNORE INTO Customer_info (firstname,lastname,address,UserID,password,type) values ('adjfh','H','abc','1','@13124df','H');
-DELETE FROM Customer_info WHERE firstName='xxxxx';
+ALTER TABLE Customer
+MODIFY COLUMN status varchar(30) default 'Unpaid';
+delete from Customer where id='8';
+alter table Customer add totalAmount int(255) after CurrentMonthReading;
