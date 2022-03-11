@@ -101,7 +101,7 @@ public class ElectricityBill {
 				int Prev_Unit=resultSet.getInt(8);
 				int units=Cur_Unit - Prev_Unit;
 				double amount = calculateBillAmount(url,username,pass,consumer_no);
-				System.out.println("-----------------------------------------BILL RECEIPT----------------------------------------------");
+				System.out.println("---------------------------------------------BILL--------------------------------------------------");
 				System.out.println("   Consumer No."+"     "+"First Name"+"     "+"Last Name"+"       "+"Units Consumed"+"       "+"Total Amount"+"        "+"Status");
 				System.out.println("---------------------------------------------------------------------------------------------------");
 			    System.out.println("     "+resultSet.getInt(6)+"                "+resultSet.getString(2)+"          "+resultSet.getString(3)+"               "+units+"                   "+amount+"           "+resultSet.getString(11));
